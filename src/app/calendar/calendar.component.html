@@ -1,0 +1,45 @@
+<div>
+    <h2>Event Scheduler</h2>
+    <form [formGroup]="eventForm" (ngSubmit)="addEvent()">
+      <input type="text" formControlName="eventTitle" placeholder="Event Title">
+      <input type="date" formControlName="eventDate">
+      <button type="submit">Add Event</button>
+    </form>
+  </div>
+  
+  <div>
+    <h3>Calendar View</h3>
+    <button (click)="viewMode = 'day'">Day</button>
+    <button (click)="viewMode = 'week'">Week</button>
+    <button (click)="viewMode = 'month'">Month</button>
+    
+    <div *ngIf="viewMode === 'day'">
+      <h4>Day View</h4>
+      <p *ngFor="let event of getEventsByDay()">{{ event.title }} - {{ event.date }}</p>
+    </div>
+    
+    <div *ngIf="viewMode === 'week'">
+      <h4>Week View</h4>
+      <p *ngFor="let event of getEventsByWeek()">{{ event.title }} - {{ event.date }}</p>
+    </div>
+    
+    <div *ngIf="viewMode === 'month'">
+      <h4>Month View</h4>
+      <p *ngFor="let event of getEventsByMonth()">{{ event.title }} - {{ event.date }}</p>
+    </div>
+  </div>
+  
+  <table>
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+    </tr>
+    <tr *ngFor="let event of events; let i = index">
+      <td>{{ event.title }}</td>
+      <td>{{ event.date }}</td>
+      <td>
+        <button (click)="deleteEvent(i)">Delete</button>
+      </td>
+    </tr>
+  </table>
+  
