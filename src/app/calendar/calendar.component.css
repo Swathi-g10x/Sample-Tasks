@@ -1,22 +1,149 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  button {
-    margin: 5px;
-    padding: 5px 10px;
+
+
+/* Title styling */
+.event-scheduler h2 {
+    color: #0056b3;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Form input fields */
+.event-scheduler input {
+    padding: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Focus effect for input fields */
+.event-scheduler input:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* Button styling */
+.event-scheduler button {
+    padding: 10px;
+    margin-left: 2px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-  }
-  
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+/* Hover and active states */
+.event-scheduler button:hover {
+    background-color: #0056b3;
+}
+
+.event-scheduler button:disabled {
+    background-color: #35689f68;
+    cursor: not-allowed;
+}
+
+.view-event h3{
+    color: #0056b3;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.view-event button{
+    padding: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.view-event button.active {
+    background-color: #0155af;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #0056b3;
+}
+
+.event-view h4{
+   color: #0056b3; 
+}
+.event-view li{
+    padding-top: 2px;
+}
+.event-view button{
+    padding: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    font-size: 14px;
+
+}
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    border: 1px solid #ddd;
+    /* padding: 35px; */
+}
+.calendar-nav button {
+    background-color:  #0056b3;
+    color: white;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 93px;
+    height: 30px;
+}
+
+.calendar-nav button:hover {
+    background-color:#007bff; 
+}
+
+.day-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    background-color: #3e7dbfa8;
+}
+
+.calendar-day {
+    min-height: 25px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.event {
+    background-color: white; /* White fill */
+    color: black; /* Black font */
+    border: 2px solid #0056b3; /* Blue border */
+    padding: 5px;
+    font-size: 12px;
+    margin-top: 2px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.event:hover {
+    background-color: #78abe3; /* Blue on hover */
+    color: white; /* White text on hover */
+}
+
